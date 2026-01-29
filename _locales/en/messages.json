@@ -1,0 +1,332 @@
+{
+  "extensionName": {
+    "message": "Wishlist Quick Add",
+    "description": "Name of the extension"
+  },
+  "extensionDescription": {
+    "message": "Quickly add items to your Wishlist from any website",
+    "description": "Description of the extension"
+  },
+  "configTitle": {
+    "message": "⚙️ Wishlist Configuration",
+    "description": "Options page title"
+  },
+  "serverConnection": {
+    "message": "🔗 Server Connection",
+    "description": "Server connection section title"
+  },
+  "serverUrl": {
+    "message": "Server URL",
+    "description": "Server URL label"
+  },
+  "serverUrlPlaceholder": {
+    "message": "https://wishlist.example.com",
+    "description": "Server URL placeholder"
+  },
+  "serverUrlHelp": {
+    "message": "The address of your Wishlist instance (without trailing slash)",
+    "description": "Server URL help text"
+  },
+  "apiKey": {
+    "message": "API Key",
+    "description": "API Key label"
+  },
+  "apiKeyPlaceholder": {
+    "message": "wl_xxxxxxxxxxxxx",
+    "description": "API Key placeholder"
+  },
+  "apiKeyHelp": {
+    "message": "Generate an API key in your Wishlist account (Account → API Keys)",
+    "description": "API Key help text"
+  },
+  "openMyAccount": {
+    "message": "Open my account",
+    "description": "Link to open account page"
+  },
+  "testConnection": {
+    "message": "🔗 Test Connection",
+    "description": "Test connection button"
+  },
+  "fetchLists": {
+    "message": "📋 Fetch My Lists",
+    "description": "Fetch lists button"
+  },
+  "myLists": {
+    "message": "📋 My Lists",
+    "description": "My lists section title"
+  },
+  "listsHelp": {
+    "message": "Your lists are automatically fetched from your account.",
+    "description": "Lists help text"
+  },
+  "configureConnection": {
+    "message": "Configure connection and click \"Fetch My Lists\"",
+    "description": "Empty lists state"
+  },
+  "defaultList": {
+    "message": "⭐ Default List",
+    "description": "Default list section title"
+  },
+  "defaultListLabel": {
+    "message": "Default selected list",
+    "description": "Default list label"
+  },
+  "defaultListHelp": {
+    "message": "This list will be pre-selected when adding items",
+    "description": "Default list help text"
+  },
+  "selectNone": {
+    "message": "-- None --",
+    "description": "No selection option"
+  },
+  "save": {
+    "message": "💾 Save",
+    "description": "Save button"
+  },
+  "helpTitle": {
+    "message": "💡 How to get an API key?",
+    "description": "Help section title"
+  },
+  "helpStep1": {
+    "message": "Log in to your Wishlist instance",
+    "description": "Help step 1"
+  },
+  "helpStep2": {
+    "message": "Go to <strong>Account</strong> (click on your profile)",
+    "description": "Help step 2"
+  },
+  "helpStep3": {
+    "message": "Select the <strong>API Keys</strong> tab",
+    "description": "Help step 3"
+  },
+  "helpStep4": {
+    "message": "Click <strong>Create API Key</strong>",
+    "description": "Help step 4"
+  },
+  "helpStep5": {
+    "message": "Copy the generated key and paste it above",
+    "description": "Help step 5"
+  },
+  "testingConnection": {
+    "message": "Testing connection...",
+    "description": "Testing connection status"
+  },
+  "connectionSuccess": {
+    "message": "✓ Connection successful! {count} list(s) found.",
+    "description": "Connection success message"
+  },
+  "connectionErrorInvalidKey": {
+    "message": "✕ Invalid or expired API key. Please check your key.",
+    "description": "Invalid API key error"
+  },
+  "connectionErrorServer": {
+    "message": "✕ Server error: {error}",
+    "description": "Server error message"
+  },
+  "connectionErrorNetwork": {
+    "message": "✕ Unable to reach the server. Check the URL and your connection.",
+    "description": "Network error message"
+  },
+  "fetchingLists": {
+    "message": "Fetching lists...",
+    "description": "Fetching lists status"
+  },
+  "listsFetched": {
+    "message": "✓ {count} list(s) fetched. Don't forget to save!",
+    "description": "Lists fetched success message"
+  },
+  "configSaved": {
+    "message": "Configuration saved successfully!",
+    "description": "Config saved message"
+  },
+  "configSaveError": {
+    "message": "Error saving configuration",
+    "description": "Config save error message"
+  },
+  "enterServerUrl": {
+    "message": "Please enter the server URL",
+    "description": "Missing server URL error"
+  },
+  "enterApiKey": {
+    "message": "Please enter your API key",
+    "description": "Missing API key error"
+  },
+  "articles": {
+    "message": "items",
+    "description": "Items count label"
+  },
+  "extractingInfo": {
+    "message": "Extracting information...",
+    "description": "Extracting page info status"
+  },
+  "noActiveTab": {
+    "message": "No active tab found",
+    "description": "No active tab error"
+  },
+  "extractionError": {
+    "message": "Unable to extract information from this page.",
+    "description": "Extraction error message"
+  },
+  "itemName": {
+    "message": "Item name",
+    "description": "Item name label"
+  },
+  "price": {
+    "message": "Price",
+    "description": "Price label"
+  },
+  "currency": {
+    "message": "Currency",
+    "description": "Currency label"
+  },
+  "note": {
+    "message": "Note (optional)",
+    "description": "Note label"
+  },
+  "notePlaceholder": {
+    "message": "Size, color, etc.",
+    "description": "Note placeholder"
+  },
+  "selectList": {
+    "message": "Select a list",
+    "description": "List selection label"
+  },
+  "addToList": {
+    "message": "Add to list",
+    "description": "Add button text"
+  },
+  "adding": {
+    "message": "Adding...",
+    "description": "Adding in progress"
+  },
+  "openWishlist": {
+    "message": "Open Wishlist",
+    "description": "Open Wishlist button"
+  },
+  "options": {
+    "message": "Options",
+    "description": "Options link"
+  },
+  "noImage": {
+    "message": "No image",
+    "description": "No image placeholder"
+  },
+  "successTitle": {
+    "message": "✓ Item Added!",
+    "description": "Success page title"
+  },
+  "itemAdded": {
+    "message": "\"{name}\" has been added to \"{list}\" successfully!",
+    "description": "Item added success message"
+  },
+  "viewList": {
+    "message": "View List",
+    "description": "View list button"
+  },
+  "close": {
+    "message": "Close",
+    "description": "Close button"
+  },
+  "errorTitle": {
+    "message": "Error",
+    "description": "Error page title"
+  },
+  "retry": {
+    "message": "Retry",
+    "description": "Retry button"
+  },
+  "configure": {
+    "message": "Configure",
+    "description": "Configure button"
+  },
+  "configNeeded": {
+    "message": "Configuration Required",
+    "description": "Config needed title"
+  },
+  "configNeededMessage": {
+    "message": "Please configure the extension before using it.",
+    "description": "Config needed message"
+  },
+  "openConfig": {
+    "message": "Open Configuration",
+    "description": "Open config button"
+  },
+  "errorInvalidKey": {
+    "message": "Invalid or expired API key. Please check your configuration.",
+    "description": "Invalid API key error in popup"
+  },
+  "errorNoPermission": {
+    "message": "You don't have permission to add to this list.",
+    "description": "No permission error"
+  },
+  "errorListNotFound": {
+    "message": "List not found. It may have been deleted.",
+    "description": "List not found error"
+  },
+  "errorAddingItem": {
+    "message": "Error adding item: {error}",
+    "description": "Generic add item error"
+  },
+  "errorNetworkPopup": {
+    "message": "Unable to contact the server. Check your connection.",
+    "description": "Network error in popup"
+  },
+  "pleaseSelectList": {
+    "message": "Please select a list",
+    "description": "No list selected alert"  },
+  "languageSettings": {
+    "message": "🌍 Language",
+    "description": "Language settings section title"
+  },
+  "selectLanguage": {
+    "message": "Display language",
+    "description": "Language selector label"
+  },
+  "languageHelp": {
+    "message": "Choose the display language for the extension",
+    "description": "Language selector help text"
+  },
+  "languageAuto": {
+    "message": "Automatic (browser language)",
+    "description": "Automatic language option"
+  },
+  "languageChanged": {
+    "message": "Language changed. Please reload the extension.",
+    "description": "Language changed message"
+  },
+  "unnamedList": {
+    "message": "Unnamed list",
+    "description": "Default name for lists without a name"
+  },
+  "refreshLists": {
+    "message": "Refresh lists",
+    "description": "Tooltip for refresh lists button"
+  },
+  "openList": {
+    "message": "Open",
+    "description": "Button to open a list in new tab"
+  },
+  "langEnglish": {
+    "message": "English",
+    "description": "English language name"
+  },
+  "langFrench": {
+    "message": "Français",
+    "description": "French language name"
+  },
+  "langGerman": {
+    "message": "Deutsch",
+    "description": "German language name"
+  },
+  "langSpanish": {
+    "message": "Español",
+    "description": "Spanish language name"
+  },
+  "langItalian": {
+    "message": "Italiano",
+    "description": "Italian language name"
+  },
+  "langPortuguese": {
+    "message": "Português",
+    "description": "Portuguese language name"  }
+}

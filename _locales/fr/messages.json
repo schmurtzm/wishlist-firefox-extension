@@ -1,0 +1,332 @@
+{
+  "extensionName": {
+    "message": "Wishlist Quick Add",
+    "description": "Nom de l'extension"
+  },
+  "extensionDescription": {
+    "message": "Ajoutez rapidement des articles à votre Wishlist depuis n'importe quel site",
+    "description": "Description de l'extension"
+  },
+  "configTitle": {
+    "message": "⚙️ Configuration Wishlist",
+    "description": "Titre de la page d'options"
+  },
+  "serverConnection": {
+    "message": "🔗 Connexion au serveur",
+    "description": "Titre de la section connexion"
+  },
+  "serverUrl": {
+    "message": "URL du serveur",
+    "description": "Label URL du serveur"
+  },
+  "serverUrlPlaceholder": {
+    "message": "https://wishlist.example.com",
+    "description": "Placeholder URL du serveur"
+  },
+  "serverUrlHelp": {
+    "message": "L'adresse de votre instance Wishlist (sans slash final)",
+    "description": "Aide URL du serveur"
+  },
+  "apiKey": {
+    "message": "Clé API",
+    "description": "Label clé API"
+  },
+  "apiKeyPlaceholder": {
+    "message": "wl_xxxxxxxxxxxxx",
+    "description": "Placeholder clé API"
+  },
+  "apiKeyHelp": {
+    "message": "Générez une clé API dans votre compte Wishlist (Compte → Clés API)",
+    "description": "Aide clé API"
+  },
+  "openMyAccount": {
+    "message": "Ouvrir mon compte",
+    "description": "Lien pour ouvrir la page compte"
+  },
+  "testConnection": {
+    "message": "🔗 Tester la connexion",
+    "description": "Bouton tester la connexion"
+  },
+  "fetchLists": {
+    "message": "📋 Récupérer mes listes",
+    "description": "Bouton récupérer les listes"
+  },
+  "myLists": {
+    "message": "📋 Mes Listes",
+    "description": "Titre de la section listes"
+  },
+  "listsHelp": {
+    "message": "Vos listes sont récupérées automatiquement depuis votre compte.",
+    "description": "Aide listes"
+  },
+  "configureConnection": {
+    "message": "Configurez la connexion et cliquez sur \"Récupérer mes listes\"",
+    "description": "État vide des listes"
+  },
+  "defaultList": {
+    "message": "⭐ Liste par défaut",
+    "description": "Titre de la section liste par défaut"
+  },
+  "defaultListLabel": {
+    "message": "Liste sélectionnée par défaut",
+    "description": "Label liste par défaut"
+  },
+  "defaultListHelp": {
+    "message": "Cette liste sera présélectionnée lors de l'ajout d'articles",
+    "description": "Aide liste par défaut"
+  },
+  "selectNone": {
+    "message": "-- Aucune --",
+    "description": "Option aucune sélection"
+  },
+  "save": {
+    "message": "💾 Enregistrer",
+    "description": "Bouton enregistrer"
+  },
+  "helpTitle": {
+    "message": "💡 Comment obtenir une clé API ?",
+    "description": "Titre de la section aide"
+  },
+  "helpStep1": {
+    "message": "Connectez-vous à votre instance Wishlist",
+    "description": "Étape d'aide 1"
+  },
+  "helpStep2": {
+    "message": "Allez dans <strong>Compte</strong> (cliquez sur votre profil)",
+    "description": "Étape d'aide 2"
+  },
+  "helpStep3": {
+    "message": "Sélectionnez l'onglet <strong>Clés API</strong>",
+    "description": "Étape d'aide 3"
+  },
+  "helpStep4": {
+    "message": "Cliquez sur <strong>Créer une clé API</strong>",
+    "description": "Étape d'aide 4"
+  },
+  "helpStep5": {
+    "message": "Copiez la clé générée et collez-la ci-dessus",
+    "description": "Étape d'aide 5"
+  },
+  "testingConnection": {
+    "message": "Test de connexion en cours...",
+    "description": "Statut test de connexion"
+  },
+  "connectionSuccess": {
+    "message": "✓ Connexion réussie ! {count} liste(s) trouvée(s).",
+    "description": "Message de succès connexion"
+  },
+  "connectionErrorInvalidKey": {
+    "message": "✕ Clé API invalide ou expirée. Vérifiez votre clé.",
+    "description": "Erreur clé API invalide"
+  },
+  "connectionErrorServer": {
+    "message": "✕ Erreur du serveur : {error}",
+    "description": "Message d'erreur serveur"
+  },
+  "connectionErrorNetwork": {
+    "message": "✕ Impossible de joindre le serveur. Vérifiez l'URL et votre connexion.",
+    "description": "Message d'erreur réseau"
+  },
+  "fetchingLists": {
+    "message": "Récupération des listes...",
+    "description": "Statut récupération des listes"
+  },
+  "listsFetched": {
+    "message": "✓ {count} liste(s) récupérée(s). N'oubliez pas d'enregistrer !",
+    "description": "Message de succès récupération listes"
+  },
+  "configSaved": {
+    "message": "Configuration enregistrée avec succès !",
+    "description": "Message configuration enregistrée"
+  },
+  "configSaveError": {
+    "message": "Erreur lors de l'enregistrement",
+    "description": "Erreur enregistrement configuration"
+  },
+  "enterServerUrl": {
+    "message": "Veuillez entrer l'URL du serveur",
+    "description": "Erreur URL serveur manquante"
+  },
+  "enterApiKey": {
+    "message": "Veuillez entrer votre clé API",
+    "description": "Erreur clé API manquante"
+  },
+  "articles": {
+    "message": "articles",
+    "description": "Label nombre d'articles"
+  },
+  "extractingInfo": {
+    "message": "Extraction des informations...",
+    "description": "Statut extraction des infos"
+  },
+  "noActiveTab": {
+    "message": "Aucun onglet actif trouvé",
+    "description": "Erreur aucun onglet actif"
+  },
+  "extractionError": {
+    "message": "Impossible d'extraire les informations de cette page.",
+    "description": "Message d'erreur extraction"
+  },
+  "itemName": {
+    "message": "Nom de l'article",
+    "description": "Label nom de l'article"
+  },
+  "price": {
+    "message": "Prix",
+    "description": "Label prix"
+  },
+  "currency": {
+    "message": "Devise",
+    "description": "Label devise"
+  },
+  "note": {
+    "message": "Note (optionnel)",
+    "description": "Label note"
+  },
+  "notePlaceholder": {
+    "message": "Taille, couleur, etc.",
+    "description": "Placeholder note"
+  },
+  "selectList": {
+    "message": "Sélectionner une liste",
+    "description": "Label sélection de liste"
+  },
+  "addToList": {
+    "message": "Ajouter à la liste",
+    "description": "Texte du bouton ajouter"
+  },
+  "adding": {
+    "message": "Ajout en cours...",
+    "description": "Ajout en cours"
+  },
+  "openWishlist": {
+    "message": "Ouvrir Wishlist",
+    "description": "Bouton ouvrir Wishlist"
+  },
+  "options": {
+    "message": "Options",
+    "description": "Lien options"
+  },
+  "noImage": {
+    "message": "Pas d'image",
+    "description": "Placeholder pas d'image"
+  },
+  "successTitle": {
+    "message": "✓ Article ajouté !",
+    "description": "Titre page succès"
+  },
+  "itemAdded": {
+    "message": "« {name} » a été ajouté à « {list} » avec succès !",
+    "description": "Message article ajouté"
+  },
+  "viewList": {
+    "message": "Voir la liste",
+    "description": "Bouton voir la liste"
+  },
+  "close": {
+    "message": "Fermer",
+    "description": "Bouton fermer"
+  },
+  "errorTitle": {
+    "message": "Erreur",
+    "description": "Titre page erreur"
+  },
+  "retry": {
+    "message": "Réessayer",
+    "description": "Bouton réessayer"
+  },
+  "configure": {
+    "message": "Configurer",
+    "description": "Bouton configurer"
+  },
+  "configNeeded": {
+    "message": "Configuration requise",
+    "description": "Titre configuration requise"
+  },
+  "configNeededMessage": {
+    "message": "Veuillez configurer l'extension avant de l'utiliser.",
+    "description": "Message configuration requise"
+  },
+  "openConfig": {
+    "message": "Ouvrir la configuration",
+    "description": "Bouton ouvrir configuration"
+  },
+  "errorInvalidKey": {
+    "message": "Clé API invalide ou expirée. Veuillez vérifier votre configuration.",
+    "description": "Erreur clé API invalide dans popup"
+  },
+  "errorNoPermission": {
+    "message": "Vous n'avez pas la permission d'ajouter à cette liste.",
+    "description": "Erreur pas de permission"
+  },
+  "errorListNotFound": {
+    "message": "Liste non trouvée. Elle a peut-être été supprimée.",
+    "description": "Erreur liste non trouvée"
+  },
+  "errorAddingItem": {
+    "message": "Erreur lors de l'ajout : {error}",
+    "description": "Erreur générique ajout article"
+  },
+  "errorNetworkPopup": {
+    "message": "Impossible de contacter le serveur. Vérifiez votre connexion.",
+    "description": "Erreur réseau dans popup"
+  },
+  "pleaseSelectList": {
+    "message": "Veuillez sélectionner une liste",
+    "description": "Alerte aucune liste sélectionnée"  },
+  "languageSettings": {
+    "message": "🌍 Langue",
+    "description": "Titre de la section langue"
+  },
+  "selectLanguage": {
+    "message": "Langue d'affichage",
+    "description": "Label du sélecteur de langue"
+  },
+  "languageHelp": {
+    "message": "Choisissez la langue d'affichage de l'extension",
+    "description": "Texte d'aide du sélecteur de langue"
+  },
+  "languageAuto": {
+    "message": "Automatique (langue du navigateur)",
+    "description": "Option langue automatique"
+  },
+  "languageChanged": {
+    "message": "Langue modifiée. Veuillez recharger l'extension.",
+    "description": "Message de changement de langue"
+  },
+  "unnamedList": {
+    "message": "Liste sans nom",
+    "description": "Nom par défaut pour les listes sans nom"
+  },
+  "refreshLists": {
+    "message": "Rafraîchir les listes",
+    "description": "Infobulle du bouton rafraîchir les listes"
+  },
+  "openList": {
+    "message": "Ouvrir",
+    "description": "Bouton pour ouvrir une liste dans un nouvel onglet"
+  },
+  "langEnglish": {
+    "message": "English",
+    "description": "Nom de la langue anglaise"
+  },
+  "langFrench": {
+    "message": "Français",
+    "description": "Nom de la langue française"
+  },
+  "langGerman": {
+    "message": "Deutsch",
+    "description": "Nom de la langue allemande"
+  },
+  "langSpanish": {
+    "message": "Español",
+    "description": "Nom de la langue espagnole"
+  },
+  "langItalian": {
+    "message": "Italiano",
+    "description": "Nom de la langue italienne"
+  },
+  "langPortuguese": {
+    "message": "Português",
+    "description": "Nom de la langue portugaise"  }
+}

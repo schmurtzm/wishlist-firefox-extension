@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist Quick Add</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Loading page -->
+    <div id="loading-page" class="page">
+      <div class="loader-container">
+        <div class="loader"></div>
+        <p id="loader-text" data-i18n="extractingInfo">Extracting information...</p>
+      </div>
+    </div>
+
+    <!-- Main page - Item form -->
+    <div id="item-page" class="page hidden">
+      <form id="item-form">
+        <!-- Title -->
+        <div class="form-group">
+          <label for="title" data-i18n="itemName">Item name</label>
+          <input type="text" id="title" name="title" required data-i18n-placeholder="itemName">
+        </div>
+
+        <!-- Image and Price -->
+        <div class="form-row">
+          <div class="form-group image-section">
+            <label data-i18n="noImage">Image</label>
+            <div class="image-gallery">
+              <div class="image-preview">
+                <img id="preview-image" src="" alt="Preview">
+                <div id="no-image" class="no-image" data-i18n="noImage">No image</div>
+              </div>
+              <div class="image-controls">
+                <button type="button" id="prev-image" class="btn-icon" title="Previous image">◀</button>
+                <span id="image-counter">0/0</span>
+                <button type="button" id="next-image" class="btn-icon" title="Next image">▶</button>
+              </div>
+            </div>
+            <input type="hidden" id="selected-image" name="imageUrl">
+          </div>
+
+          <div class="form-group price-section">
+            <label for="price" data-i18n="price">Price</label>
+            <div class="price-input">
+              <input type="number" id="price" name="price" step="0.01" min="0" placeholder="0.00">
+              <select id="currency" name="currency">
+                <option value="EUR">€</option>
+                <option value="USD">$</option>
+                <option value="GBP">£</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="form-group">
+          <label for="note" data-i18n="note">Notes</label>
+          <textarea id="note" name="note" rows="3" data-i18n-placeholder="notePlaceholder"></textarea>
+        </div>
+
+        <!-- List selection -->
+        <div class="form-group">
+          <label for="list-select" data-i18n="selectList">Add to list</label>
+          <div class="select-with-refresh">
+            <select id="list-select" name="listId">
+              <option value="" data-i18n="selectNone">-- Select a list --</option>
+            </select>
+            <button type="button" id="open-selected-list-btn" class="btn-icon-small" data-i18n-title="openList" title="Open list">🔗</button>
+            <button type="button" id="refresh-lists-btn" class="btn-icon-small" data-i18n-title="refreshLists">🔄</button>
+          </div>
+          <p class="help-text" id="list-help">
+            <a href="#" id="open-options" data-i18n="options">Configure your lists in options</a>
+          </p>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="button-group">
+          <button type="submit" id="add-button" class="btn btn-primary">
+            <span id="add-button-text" data-i18n="addToList">Add to list</span>
+          </button>
+          <button type="button" id="open-wishlist" class="btn btn-secondary" data-i18n="openWishlist">
+            Open Wishlist
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Success page -->
+    <div id="success-page" class="page hidden">
+      <div class="message-container success">
+        <div class="icon">✓</div>
+        <h2 data-i18n="successTitle">Item added!</h2>
+        <p id="success-message">The item has been added to your list.</p>
+        <div class="button-group">
+          <button type="button" id="view-list" class="btn btn-primary" data-i18n="viewList">View list</button>
+          <button type="button" id="close-popup" class="btn btn-secondary" data-i18n="close">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error page -->
+    <div id="error-page" class="page hidden">
+      <div class="message-container error">
+        <div class="icon">✕</div>
+        <h2 data-i18n="errorTitle">Error</h2>
+        <p id="error-message">An error occurred.</p>
+        <div class="button-group">
+          <button type="button" id="retry-button" class="btn btn-primary" data-i18n="retry">Retry</button>
+          <button type="button" id="config-button" class="btn btn-secondary" data-i18n="configure">Configuration</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Configuration required page -->
+    <div id="config-page" class="page hidden">
+      <div class="message-container warning">
+        <div class="icon">⚙</div>
+        <h2 data-i18n="configNeeded">Configuration required</h2>
+        <p data-i18n="configNeededMessage">Please configure the extension before using it.</p>
+        <div class="button-group">
+          <button type="button" id="open-config" class="btn btn-primary" data-i18n="openConfig">Open options</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/popup.js"></script>
+</body>
+</html>
