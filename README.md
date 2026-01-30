@@ -2,6 +2,7 @@
 
 Firefox extension to quickly add items to your Wishlist instance from any website.
 
+
 ## Features
 
 - 🔍 Automatic extraction of product information (title, price, images)
@@ -41,6 +42,13 @@ Firefox extension to quickly add items to your Wishlist instance from any websit
 4. Edit if necessary (title, price, image)
 5. Choose the destination list
 6. Click "Add to list"
+
+## Screenshots
+
+<img width="245" height="775" alt="image" src="https://github.com/user-attachments/assets/c8e0409e-93f1-484f-b9d8-ddd25225dacf" />
+  
+<img width="310" height="785" alt="image" src="https://github.com/user-attachments/assets/babcd131-0d9d-4e1c-a129-68cb3d48aa7d" />
+
 
 ## Website Support
 
