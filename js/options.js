@@ -49,7 +49,6 @@
     elements.toggleKeyBtn = document.getElementById('toggle-key-btn');
     elements.listsContainer = document.getElementById('lists-container');
     elements.listsCount = document.getElementById('lists-count');
-    elements.defaultList = document.getElementById('default-list');
     elements.languageSelect = document.getElementById('language-select');
     elements.saveBtn = document.getElementById('save-btn');
     elements.openAccountLink = document.getElementById('open-account-link');
@@ -64,7 +63,6 @@
     elements.toggleKeyBtn.addEventListener('click', toggleApiKeyVisibility);
     elements.openAccountLink.addEventListener('click', openAccountPage);
     elements.languageSelect.addEventListener('change', handleLanguageChange);
-    elements.defaultList.addEventListener('change', handleDefaultListChange);
   }
 
   /**
@@ -72,7 +70,7 @@
    */
   async function loadConfig() {
     try {
-      const result = await browser.storage.local.get(['serverUrl', 'apiKey', 'lists', 'defaultListId', 'language']);
+      const result = await browser.storage.local.get(['serverUrl', 'apiKey', 'lists', 'language']);
       
       elements.serverUrl.value = result.serverUrl || '';
       elements.apiKey.value = result.apiKey || '';
@@ -82,7 +80,6 @@
       elements.languageSelect.value = result.language || 'auto';
       
       renderLists();
-      updateDefaultListSelect(result.defaultListId);
       
     } catch (error) {
       console.error('Error while loading:', error);
@@ -102,7 +99,6 @@
       
       // Re-render dynamic content
       renderLists();
-      updateDefaultListSelect();
       
       showStatus(__('languageChanged'), 'info');
     }
@@ -181,41 +177,6 @@
   }
 
   /**
-   * Update the default list selection
-   */
-  function updateDefaultListSelect(currentDefault = null) {
-    const current = currentDefault || elements.defaultList.value;
-    
-    elements.defaultList.innerHTML = `<option value="">${__('selectNone')}</option>`;
-    
-    for (const list of lists) {
-      const option = document.createElement('option');
-      option.value = list.id;
-      const listName = list.name || __('unnamedList');
-      const groupName = (list.groupName && list.groupName.toLowerCase() !== 'default') ? ` (${list.groupName})` : '';
-      option.textContent = `${listName}${groupName}`;
-      elements.defaultList.appendChild(option);
-    }
-    
-    if (current && lists.find(l => l.id === current)) {
-      elements.defaultList.value = current;
-    }
-  }
-
-  /**
-   * Handle default list change - auto save
-   */
-  async function handleDefaultListChange() {
-    try {
-      await browser.storage.local.set({
-        defaultListId: elements.defaultList.value
-      });
-    } catch (error) {
-      console.error('Error while saving default list:', error);
-    }
-  }
-
-  /**
    * Save and connect - saves config, tests connection, and fetches lists
    */
   async function saveAndConnect() {
@@ -269,7 +230,6 @@
         await browser.storage.local.set({ lists });
         
         renderLists();
-        updateDefaultListSelect();
         
         showStatus(__('connectionSuccessListsFetched', { count: lists.length }), 'success');
       } else if (response.status === 401) {
@@ -322,7 +282,6 @@
         lists = data.lists || [];
         
         renderLists();
-        updateDefaultListSelect();
         
         showStatus(__('listsFetched', { count: lists.length }), 'success');
       } else if (response.status === 401) {
