@@ -212,6 +212,36 @@
       flex-wrap: wrap;
     }
 
+    .connection-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      background: #d4edda;
+      border-radius: 6px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+    
+    .connection-status .status-icon {
+      color: #28a745;
+      font-size: 16px;
+    }
+    
+    .btn-link {
+      background: none;
+      border: none;
+      color: #007bff;
+      cursor: pointer;
+      font-size: 12px;
+      padding: 0;
+      text-decoration: underline;
+    }
+    
+    .btn-link:hover {
+      color: #0056b3;
+    }
+
     /* Dark theme support for options page */
     @media (prefers-color-scheme: dark) {
       body {
@@ -340,6 +370,23 @@
       .btn-secondary:hover:not(:disabled) {
         background: #42414d;
       }
+
+      .connection-status {
+        background: rgba(40, 167, 69, 0.15);
+        border: 1px solid #52525e;
+      }
+
+      .connection-status .status-icon {
+        color: #66d17e;
+      }
+
+      .btn-link {
+        color: #8b94da;
+      }
+
+      .btn-link:hover {
+        color: #a8aef0;
+      }
     }
   </style>
 </head>
@@ -354,34 +401,64 @@
       <p class="help-text" data-i18n="serverUrlHelp">The address of your Wishlist instance (without trailing slash)</p>
     </div>
     
-    <div class="form-group">
-      <label for="api-key" data-i18n="apiKey">API Key</label>
-      <div class="api-key-field">
-        <input type="password" id="api-key" data-i18n-placeholder="apiKeyPlaceholder">
-        <button type="button" id="toggle-key-btn" title="Show/hide">👁️</button>
-      </div>
-      <p class="help-text">
-        <span data-i18n="apiKeyHelp">Generate an API key in your Wishlist account (Account → API Keys)</span>
-        <a href="#" id="open-account-link" style="margin-left: 8px;" data-i18n="openMyAccount">Open my account</a>
-      </p>
+    <!-- Connection Status (shown when logged in) -->
+    <div id="connection-status" class="connection-status" style="display: none;">
+      <span class="status-icon">✓</span>
+      <span data-i18n="connectedAs">Connected as</span>
+      <strong id="connected-user"></strong>
+      <button type="button" id="logout-btn" class="btn-link" data-i18n="logout">Log out</button>
     </div>
     
-    <div class="button-group">
-      <button type="button" id="save-btn" class="btn btn-primary" data-i18n="saveAndConnect">💾 Save & Connect</button>
+    <!-- Login Form (shown when not connected) -->
+    <div id="login-section">
+      <div class="form-group">
+        <label for="username" data-i18n="username">Username</label>
+        <input type="text" id="username" autocomplete="username">
+      </div>
+      
+      <div class="form-group">
+        <label for="password" data-i18n="password">Password</label>
+        <input type="password" id="password" autocomplete="current-password">
+      </div>
+      
+      <div class="button-group">
+        <button type="button" id="login-btn" class="btn btn-primary" data-i18n="login">🔑 Log in</button>
+        <button type="button" id="show-apikey-btn" class="btn-link" data-i18n="useApiKeyInstead">Use API key instead</button>
+      </div>
+    </div>
+    
+    <!-- API Key Form (hidden by default) -->
+    <div id="apikey-section" style="display: none;">
+      <div class="form-group">
+        <label for="api-key" data-i18n="apiKey">API Key</label>
+        <div class="api-key-field">
+          <input type="password" id="api-key" data-i18n-placeholder="apiKeyPlaceholder">
+          <button type="button" id="toggle-key-btn" title="Show/hide">👁️</button>
+        </div>
+        <p class="help-text">
+          <span data-i18n="apiKeyHelp">Generate an API key in your Wishlist account (Account → API Keys)</span>
+          <a href="#" id="open-account-link" style="margin-left: 8px;" data-i18n="openMyAccount">Open my account</a>
+        </p>
+      </div>
+      
+      <div class="button-group">
+        <button type="button" id="save-btn" class="btn btn-primary" data-i18n="saveAndConnect">💾 Save & Connect</button>
+        <button type="button" id="show-login-btn" class="btn-link" data-i18n="useLoginInstead">Use login instead</button>
+      </div>
+      
+      <details class="help-section" style="margin-top: 12px;">
+        <summary data-i18n="helpTitle">💡 How to get an API key?</summary>
+        <ol>
+          <li data-i18n="helpStep1">Log in to your Wishlist instance</li>
+          <li data-i18n-html="helpStep2">Go to <strong>Account</strong> (click on your profile)</li>
+          <li data-i18n-html="helpStep3">Select the <strong>API Keys</strong> tab</li>
+          <li data-i18n-html="helpStep4">Click on <strong>Create API key</strong></li>
+          <li data-i18n="helpStep5">Copy the generated key and paste it above</li>
+        </ol>
+      </details>
     </div>
     
     <div id="status-message" class="status-message"></div>
-    
-    <details class="help-section" style="margin-top: 16px;">
-      <summary data-i18n="helpTitle">💡 How to get an API key?</summary>
-      <ol>
-        <li data-i18n="helpStep1">Log in to your Wishlist instance</li>
-        <li data-i18n-html="helpStep2">Go to <strong>Account</strong> (click on your profile)</li>
-        <li data-i18n-html="helpStep3">Select the <strong>API Keys</strong> tab</li>
-        <li data-i18n-html="helpStep4">Click on <strong>Create API key</strong></li>
-        <li data-i18n="helpStep5">Copy the generated key and paste it above</li>
-      </ol>
-    </details>
   </div>
   
   <details class="section lists-section">

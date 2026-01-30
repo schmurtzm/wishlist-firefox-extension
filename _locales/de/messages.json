@@ -124,7 +124,7 @@
     "description": "Listen abrufen Status"
   },
   "listsFetched": {
-    "message": "✓ {count} Liste(n) abgerufen. Vergessen Sie nicht zu speichern!",
+    "message": "✓ {count} Liste(n) abgerufen.",
     "description": "Listen abgerufen Erfolgsnachricht"
   },
   "configSaved": {
@@ -322,5 +322,53 @@
   "langPortuguese": {
     "message": "Português",
     "description": "Portugiesischer Sprachname"
+  },
+  "username": {
+    "message": "Benutzername",
+    "description": "Benutzername-Feldlabel"
+  },
+  "password": {
+    "message": "Passwort",
+    "description": "Passwort-Feldlabel"
+  },
+  "login": {
+    "message": "🔑 Anmelden",
+    "description": "Anmelde-Button-Text"
+  },
+  "logout": {
+    "message": "Abmelden",
+    "description": "Abmelde-Button-Text"
+  },
+  "connectedAs": {
+    "message": "Angemeldet als",
+    "description": "Angemeldet als Label"
+  },
+  "loggingIn": {
+    "message": "Anmeldung läuft...",
+    "description": "Anmeldung in Bearbeitung"
+  },
+  "loginSuccess": {
+    "message": "✓ Angemeldet als {name}",
+    "description": "Erfolgreiche Anmeldung"
+  },
+  "loginError": {
+    "message": "Ungültiger Benutzername oder Passwort",
+    "description": "Anmeldefehler"
+  },
+  "logoutSuccess": {
+    "message": "Erfolgreich abgemeldet",
+    "description": "Erfolgreiche Abmeldung"
+  },
+  "enterCredentials": {
+    "message": "Bitte geben Sie Ihren Benutzernamen und Ihr Passwort ein",
+    "description": "Fehlende Anmeldedaten"
+  },
+  "useApiKeyInstead": {
+    "message": "Stattdessen API-Schlüssel verwenden",
+    "description": "Link zum API-Schlüssel-Modus"
+  },
+  "useLoginInstead": {
+    "message": "Stattdessen Login verwenden",
+    "description": "Link zum Login-Modus"
   }
 }

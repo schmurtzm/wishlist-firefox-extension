@@ -124,7 +124,7 @@
     "description": "Estado obteniendo listas"
   },
   "listsFetched": {
-    "message": "✓ {count} lista(s) obtenida(s). ¡No olvides guardar!",
+    "message": "✓ {count} lista(s) obtenida(s).",
     "description": "Mensaje de éxito listas obtenidas"
   },
   "configSaved": {
@@ -320,5 +320,54 @@
   },
   "langPortuguese": {
     "message": "Português",
-    "description": "Nombre del idioma portugués"  }
+    "description": "Nombre del idioma portugués"
+  },
+  "username": {
+    "message": "Nombre de usuario",
+    "description": "Etiqueta del campo de nombre de usuario"
+  },
+  "password": {
+    "message": "Contraseña",
+    "description": "Etiqueta del campo de contraseña"
+  },
+  "login": {
+    "message": "🔑 Iniciar sesión",
+    "description": "Texto del botón de inicio de sesión"
+  },
+  "logout": {
+    "message": "Cerrar sesión",
+    "description": "Texto del botón de cierre de sesión"
+  },
+  "connectedAs": {
+    "message": "Conectado como",
+    "description": "Etiqueta conectado como"
+  },
+  "loggingIn": {
+    "message": "Iniciando sesión...",
+    "description": "Mensaje de inicio de sesión en curso"
+  },
+  "loginSuccess": {
+    "message": "✓ Conectado como {name}",
+    "description": "Mensaje de éxito de inicio de sesión"
+  },
+  "loginError": {
+    "message": "Nombre de usuario o contraseña incorrectos",
+    "description": "Mensaje de error de inicio de sesión"
+  },
+  "logoutSuccess": {
+    "message": "Sesión cerrada correctamente",
+    "description": "Mensaje de éxito de cierre de sesión"
+  },
+  "enterCredentials": {
+    "message": "Por favor, introduce tu nombre de usuario y contraseña",
+    "description": "Error de credenciales faltantes"
+  },
+  "useApiKeyInstead": {
+    "message": "Usar clave API en su lugar",
+    "description": "Enlace para cambiar al modo de clave API"
+  },
+  "useLoginInstead": {
+    "message": "Usar inicio de sesión en su lugar",
+    "description": "Enlace para cambiar al modo de inicio de sesión"
+  }
 }

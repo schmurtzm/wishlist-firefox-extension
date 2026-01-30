@@ -124,7 +124,7 @@
     "description": "Statut récupération des listes"
   },
   "listsFetched": {
-    "message": "✓ {count} liste(s) récupérée(s). N'oubliez pas d'enregistrer !",
+    "message": "✓ {count} liste(s) récupérée(s).",
     "description": "Message de succès récupération listes"
   },
   "configSaved": {
@@ -320,5 +320,54 @@
   },
   "langPortuguese": {
     "message": "Português",
-    "description": "Nom de la langue portugaise"  }
+    "description": "Nom de la langue portugaise"
+  },
+  "username": {
+    "message": "Nom d'utilisateur",
+    "description": "Label du champ nom d'utilisateur"
+  },
+  "password": {
+    "message": "Mot de passe",
+    "description": "Label du champ mot de passe"
+  },
+  "login": {
+    "message": "🔑 Se connecter",
+    "description": "Texte du bouton de connexion"
+  },
+  "logout": {
+    "message": "Se déconnecter",
+    "description": "Texte du bouton de déconnexion"
+  },
+  "connectedAs": {
+    "message": "Connecté en tant que",
+    "description": "Label connecté en tant que"
+  },
+  "loggingIn": {
+    "message": "Connexion en cours...",
+    "description": "Message de connexion en cours"
+  },
+  "loginSuccess": {
+    "message": "✓ Connecté en tant que {name}",
+    "description": "Message de succès de connexion"
+  },
+  "loginError": {
+    "message": "Nom d'utilisateur ou mot de passe incorrect",
+    "description": "Message d'erreur de connexion"
+  },
+  "logoutSuccess": {
+    "message": "Déconnexion réussie",
+    "description": "Message de succès de déconnexion"
+  },
+  "enterCredentials": {
+    "message": "Veuillez entrer votre nom d'utilisateur et mot de passe",
+    "description": "Erreur identifiants manquants"
+  },
+  "useApiKeyInstead": {
+    "message": "Utiliser une clé API à la place",
+    "description": "Lien pour passer au mode clé API"
+  },
+  "useLoginInstead": {
+    "message": "Utiliser le login à la place",
+    "description": "Lien pour passer au mode login"
+  }
 }

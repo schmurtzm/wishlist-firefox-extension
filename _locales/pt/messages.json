@@ -124,7 +124,7 @@
     "description": "Estado buscando listas"
   },
   "listsFetched": {
-    "message": "✓ {count} lista(s) buscada(s). Não esqueça de salvar!",
+    "message": "✓ {count} lista(s) buscada(s).",
     "description": "Mensagem de sucesso listas buscadas"
   },
   "configSaved": {
@@ -322,5 +322,53 @@
   "langPortuguese": {
     "message": "Português",
     "description": "Nome do idioma português"
+  },
+  "username": {
+    "message": "Nome de usuário",
+    "description": "Rótulo do campo de nome de usuário"
+  },
+  "password": {
+    "message": "Senha",
+    "description": "Rótulo do campo de senha"
+  },
+  "login": {
+    "message": "🔑 Entrar",
+    "description": "Texto do botão de login"
+  },
+  "logout": {
+    "message": "Sair",
+    "description": "Texto do botão de logout"
+  },
+  "connectedAs": {
+    "message": "Conectado como",
+    "description": "Rótulo conectado como"
+  },
+  "loggingIn": {
+    "message": "Entrando...",
+    "description": "Mensagem de login em andamento"
+  },
+  "loginSuccess": {
+    "message": "✓ Conectado como {name}",
+    "description": "Mensagem de sucesso de login"
+  },
+  "loginError": {
+    "message": "Nome de usuário ou senha inválidos",
+    "description": "Mensagem de erro de login"
+  },
+  "logoutSuccess": {
+    "message": "Logout realizado com sucesso",
+    "description": "Mensagem de sucesso de logout"
+  },
+  "enterCredentials": {
+    "message": "Por favor, insira seu nome de usuário e senha",
+    "description": "Erro de credenciais faltando"
+  },
+  "useApiKeyInstead": {
+    "message": "Usar chave API em vez disso",
+    "description": "Link para mudar para o modo de chave API"
+  },
+  "useLoginInstead": {
+    "message": "Usar login em vez disso",
+    "description": "Link para mudar para o modo de login"
   }
 }

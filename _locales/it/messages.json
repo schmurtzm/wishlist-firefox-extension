@@ -124,7 +124,7 @@
     "description": "Stato recupero delle liste"
   },
   "listsFetched": {
-    "message": "✓ {count} lista/e recuperata/e. Non dimenticare di salvare!",
+    "message": "✓ {count} lista/e recuperata/e.",
     "description": "Messaggio di successo liste recuperate"
   },
   "configSaved": {
@@ -322,5 +322,53 @@
   "langPortuguese": {
     "message": "Português",
     "description": "Nome della lingua portoghese"
+  },
+  "username": {
+    "message": "Nome utente",
+    "description": "Etichetta del campo nome utente"
+  },
+  "password": {
+    "message": "Password",
+    "description": "Etichetta del campo password"
+  },
+  "login": {
+    "message": "🔑 Accedi",
+    "description": "Testo del pulsante di accesso"
+  },
+  "logout": {
+    "message": "Esci",
+    "description": "Testo del pulsante di uscita"
+  },
+  "connectedAs": {
+    "message": "Connesso come",
+    "description": "Etichetta connesso come"
+  },
+  "loggingIn": {
+    "message": "Accesso in corso...",
+    "description": "Messaggio di accesso in corso"
+  },
+  "loginSuccess": {
+    "message": "✓ Connesso come {name}",
+    "description": "Messaggio di successo accesso"
+  },
+  "loginError": {
+    "message": "Nome utente o password non validi",
+    "description": "Messaggio di errore accesso"
+  },
+  "logoutSuccess": {
+    "message": "Disconnessione riuscita",
+    "description": "Messaggio di successo disconnessione"
+  },
+  "enterCredentials": {
+    "message": "Per favore inserisci il tuo nome utente e password",
+    "description": "Errore credenziali mancanti"
+  },
+  "useApiKeyInstead": {
+    "message": "Usa invece la chiave API",
+    "description": "Link per passare alla modalità chiave API"
+  },
+  "useLoginInstead": {
+    "message": "Usa invece l'accesso",
+    "description": "Link per passare alla modalità accesso"
   }
 }

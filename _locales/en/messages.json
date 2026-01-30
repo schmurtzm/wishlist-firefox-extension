@@ -124,7 +124,7 @@
     "description": "Fetching lists status"
   },
   "listsFetched": {
-    "message": "✓ {count} list(s) fetched. Don't forget to save!",
+    "message": "✓ {count} list(s) fetched.",
     "description": "Lists fetched success message"
   },
   "configSaved": {
@@ -320,5 +320,54 @@
   },
   "langPortuguese": {
     "message": "Português",
-    "description": "Portuguese language name"  }
+    "description": "Portuguese language name"
+  },
+  "username": {
+    "message": "Username",
+    "description": "Username field label"
+  },
+  "password": {
+    "message": "Password",
+    "description": "Password field label"
+  },
+  "login": {
+    "message": "🔑 Log in",
+    "description": "Login button text"
+  },
+  "logout": {
+    "message": "Log out",
+    "description": "Logout button text"
+  },
+  "connectedAs": {
+    "message": "Connected as",
+    "description": "Connected as label"
+  },
+  "loggingIn": {
+    "message": "Logging in...",
+    "description": "Login in progress message"
+  },
+  "loginSuccess": {
+    "message": "✓ Logged in as {name}",
+    "description": "Login success message"
+  },
+  "loginError": {
+    "message": "Invalid username or password",
+    "description": "Login error message"
+  },
+  "logoutSuccess": {
+    "message": "Logged out successfully",
+    "description": "Logout success message"
+  },
+  "enterCredentials": {
+    "message": "Please enter your username and password",
+    "description": "Missing credentials error"
+  },
+  "useApiKeyInstead": {
+    "message": "Use API key instead",
+    "description": "Link to switch to API key mode"
+  },
+  "useLoginInstead": {
+    "message": "Use login instead",
+    "description": "Link to switch to login mode"
+  }
 }

@@ -1,6 +1,6 @@
 /**
  * Options page script for Wishlist Quick Add
- * Uses the API with API key authentication
+ * Supports authentication via login/password or API key
  */
 
 (function() {
@@ -9,6 +9,7 @@
   // State
   let lists = [];
   let apiKeyVisible = false;
+  let connectedUser = null;
 
   // DOM elements
   const elements = {};
@@ -53,6 +54,18 @@
     elements.saveBtn = document.getElementById('save-btn');
     elements.openAccountLink = document.getElementById('open-account-link');
     elements.statusMessage = document.getElementById('status-message');
+    
+    // Login elements
+    elements.loginSection = document.getElementById('login-section');
+    elements.apikeySection = document.getElementById('apikey-section');
+    elements.connectionStatus = document.getElementById('connection-status');
+    elements.connectedUser = document.getElementById('connected-user');
+    elements.username = document.getElementById('username');
+    elements.password = document.getElementById('password');
+    elements.loginBtn = document.getElementById('login-btn');
+    elements.logoutBtn = document.getElementById('logout-btn');
+    elements.showApikeyBtn = document.getElementById('show-apikey-btn');
+    elements.showLoginBtn = document.getElementById('show-login-btn');
   }
 
   /**
@@ -63,6 +76,17 @@
     elements.toggleKeyBtn.addEventListener('click', toggleApiKeyVisibility);
     elements.openAccountLink.addEventListener('click', openAccountPage);
     elements.languageSelect.addEventListener('change', handleLanguageChange);
+    
+    // Login flow
+    elements.loginBtn.addEventListener('click', handleLogin);
+    elements.logoutBtn.addEventListener('click', handleLogout);
+    elements.showApikeyBtn.addEventListener('click', () => toggleAuthMode('apikey'));
+    elements.showLoginBtn.addEventListener('click', () => toggleAuthMode('login'));
+    
+    // Allow Enter key to submit login
+    elements.password.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') handleLogin();
+    });
   }
 
   /**
@@ -70,20 +94,154 @@
    */
   async function loadConfig() {
     try {
-      const result = await browser.storage.local.get(['serverUrl', 'apiKey', 'lists', 'language']);
+      const result = await browser.storage.local.get(['serverUrl', 'apiKey', 'lists', 'language', 'connectedUser']);
       
       elements.serverUrl.value = result.serverUrl || '';
       elements.apiKey.value = result.apiKey || '';
       lists = result.lists || [];
+      connectedUser = result.connectedUser || null;
       
       // Set language selector
       elements.languageSelect.value = result.language || 'auto';
       
+      // Update UI based on connection state
+      updateConnectionUI();
       renderLists();
       
     } catch (error) {
       console.error('Error while loading:', error);
       showStatus(__('configSaveError'), 'error');
+    }
+  }
+
+  /**
+   * Update UI based on connection state
+   */
+  function updateConnectionUI() {
+    const apiKey = elements.apiKey.value.trim();
+    
+    if (apiKey && connectedUser) {
+      // User is connected via login
+      elements.connectionStatus.style.display = 'flex';
+      elements.connectedUser.textContent = connectedUser.name || connectedUser.username;
+      elements.loginSection.style.display = 'none';
+      elements.apikeySection.style.display = 'none';
+    } else if (apiKey) {
+      // User has an API key but no user info (manual API key)
+      elements.connectionStatus.style.display = 'none';
+      elements.loginSection.style.display = 'none';
+      elements.apikeySection.style.display = 'block';
+    } else {
+      // Not connected - show login form
+      elements.connectionStatus.style.display = 'none';
+      elements.loginSection.style.display = 'block';
+      elements.apikeySection.style.display = 'none';
+    }
+  }
+
+  /**
+   * Toggle between login and API key modes
+   */
+  function toggleAuthMode(mode) {
+    if (mode === 'apikey') {
+      elements.loginSection.style.display = 'none';
+      elements.apikeySection.style.display = 'block';
+    } else {
+      elements.loginSection.style.display = 'block';
+      elements.apikeySection.style.display = 'none';
+    }
+  }
+
+  /**
+   * Handle login with username/password
+   */
+  async function handleLogin() {
+    let serverUrl = elements.serverUrl.value.trim();
+    const username = elements.username.value.trim();
+    const password = elements.password.value;
+    
+    if (!serverUrl) {
+      showStatus(__('enterServerUrl'), 'error');
+      return;
+    }
+    
+    if (!username || !password) {
+      showStatus(__('enterCredentials'), 'error');
+      return;
+    }
+    
+    if (serverUrl.endsWith('/')) {
+      serverUrl = serverUrl.slice(0, -1);
+    }
+    
+    showStatus(__('loggingIn'), 'info');
+    elements.loginBtn.disabled = true;
+    
+    try {
+      const response = await fetch(`${serverUrl}/api/v1/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ username, password })
+      });
+      
+      const data = await response.json();
+      
+      if (response.ok && data.success) {
+        // Save the API key and user info
+        connectedUser = data.user;
+        elements.apiKey.value = data.apiKey;
+        
+        await browser.storage.local.set({
+          serverUrl,
+          apiKey: data.apiKey,
+          connectedUser: data.user
+        });
+        
+        // Clear password field
+        elements.password.value = '';
+        
+        // Update UI
+        updateConnectionUI();
+        
+        showStatus(__('loginSuccess', { name: data.user.name || data.user.username }), 'success');
+        
+        // Automatically fetch lists
+        await fetchLists();
+        
+      } else {
+        showStatus(data.error || __('loginError'), 'error');
+      }
+      
+    } catch (error) {
+      console.error('Login error:', error);
+      showStatus(__('connectionErrorNetwork'), 'error');
+    } finally {
+      elements.loginBtn.disabled = false;
+    }
+  }
+
+  /**
+   * Handle logout
+   */
+  async function handleLogout() {
+    try {
+      // Clear stored credentials
+      await browser.storage.local.remove(['apiKey', 'connectedUser', 'lists']);
+      
+      elements.apiKey.value = '';
+      connectedUser = null;
+      lists = [];
+      
+      updateConnectionUI();
+      renderLists();
+      
+      showStatus(__('logoutSuccess'), 'info');
+      
+    } catch (error) {
+      console.error('Logout error:', error);
     }
   }
 
@@ -246,7 +404,7 @@
   }
 
   /**
-   * Fetch lists from the API (used for refresh)
+   * Fetch lists from the API
    */
   async function fetchLists() {
     let serverUrl = elements.serverUrl.value.trim();
@@ -280,6 +438,9 @@
       if (response.ok) {
         const data = await response.json();
         lists = data.lists || [];
+        
+        // Save lists to storage
+        await browser.storage.local.set({ lists });
         
         renderLists();
         
