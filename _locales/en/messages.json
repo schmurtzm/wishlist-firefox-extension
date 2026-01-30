@@ -83,6 +83,10 @@
     "message": "💾 Save",
     "description": "Save button"
   },
+  "saveAndConnect": {
+    "message": "💾 Save & Connect",
+    "description": "Save and connect button"
+  },
   "helpTitle": {
     "message": "💡 How to get an API key?",
     "description": "Help section title"
@@ -114,6 +118,10 @@
   "connectionSuccess": {
     "message": "✓ Connection successful! {count} list(s) found.",
     "description": "Connection success message"
+  },
+  "connectionSuccessListsFetched": {
+    "message": "✓ Connected! {count} list(s) fetched.",
+    "description": "Connection success and lists fetched message"
   },
   "connectionErrorInvalidKey": {
     "message": "✕ Invalid or expired API key. Please check your key.",

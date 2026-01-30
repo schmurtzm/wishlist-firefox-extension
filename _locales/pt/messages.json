@@ -83,6 +83,10 @@
     "message": "💾 Salvar",
     "description": "Botão salvar"
   },
+  "saveAndConnect": {
+    "message": "💾 Salvar & Conectar",
+    "description": "Botão salvar e conectar"
+  },
   "helpTitle": {
     "message": "💡 Como obter uma chave API?",
     "description": "Título da seção de ajuda"
@@ -114,6 +118,10 @@
   "connectionSuccess": {
     "message": "✓ Conexão bem-sucedida! {count} lista(s) encontrada(s).",
     "description": "Mensagem de sucesso conexão"
+  },
+  "connectionSuccessListsFetched": {
+    "message": "✓ Conectado! {count} lista(s) recuperada(s).",
+    "description": "Mensagem de sucesso conexão e listas recuperadas"
   },
   "connectionErrorInvalidKey": {
     "message": "✕ Chave API inválida ou expirada. Verifique sua chave.",

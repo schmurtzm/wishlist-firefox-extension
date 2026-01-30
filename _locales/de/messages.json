@@ -83,6 +83,10 @@
     "message": "💾 Speichern",
     "description": "Speichern Button"
   },
+  "saveAndConnect": {
+    "message": "💾 Speichern & Verbinden",
+    "description": "Speichern und verbinden Button"
+  },
   "helpTitle": {
     "message": "💡 Wie bekomme ich einen API-Schlüssel?",
     "description": "Titel des Hilfeabschnitts"
@@ -114,6 +118,10 @@
   "connectionSuccess": {
     "message": "✓ Verbindung erfolgreich! {count} Liste(n) gefunden.",
     "description": "Verbindungserfolg Nachricht"
+  },
+  "connectionSuccessListsFetched": {
+    "message": "✓ Verbunden! {count} Liste(n) abgerufen.",
+    "description": "Verbindungserfolg und Listen abgerufen Nachricht"
   },
   "connectionErrorInvalidKey": {
     "message": "✕ Ungültiger oder abgelaufener API-Schlüssel. Bitte überprüfen Sie Ihren Schlüssel.",

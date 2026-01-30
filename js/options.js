@@ -48,11 +48,10 @@
     elements.apiKey = document.getElementById('api-key');
     elements.toggleKeyBtn = document.getElementById('toggle-key-btn');
     elements.listsContainer = document.getElementById('lists-container');
+    elements.listsCount = document.getElementById('lists-count');
     elements.defaultList = document.getElementById('default-list');
     elements.languageSelect = document.getElementById('language-select');
     elements.saveBtn = document.getElementById('save-btn');
-    elements.testBtn = document.getElementById('test-btn');
-    elements.fetchListsBtn = document.getElementById('fetch-lists-btn');
     elements.openAccountLink = document.getElementById('open-account-link');
     elements.statusMessage = document.getElementById('status-message');
   }
@@ -61,12 +60,11 @@
    * Initialize event listeners
    */
   function initEventListeners() {
-    elements.saveBtn.addEventListener('click', saveConfig);
-    elements.testBtn.addEventListener('click', testConnection);
-    elements.fetchListsBtn.addEventListener('click', fetchLists);
+    elements.saveBtn.addEventListener('click', saveAndConnect);
     elements.toggleKeyBtn.addEventListener('click', toggleApiKeyVisibility);
     elements.openAccountLink.addEventListener('click', openAccountPage);
     elements.languageSelect.addEventListener('change', handleLanguageChange);
+    elements.defaultList.addEventListener('change', handleDefaultListChange);
   }
 
   /**
@@ -136,6 +134,9 @@
    * Display the lists
    */
   function renderLists() {
+    // Update list count
+    elements.listsCount.textContent = `(${lists.length})`;
+    
     if (lists.length === 0) {
       elements.listsContainer.innerHTML = `
         <div class="empty-state">
@@ -202,9 +203,22 @@
   }
 
   /**
-   * Save the configuration
+   * Handle default list change - auto save
    */
-  async function saveConfig() {
+  async function handleDefaultListChange() {
+    try {
+      await browser.storage.local.set({
+        defaultListId: elements.defaultList.value
+      });
+    } catch (error) {
+      console.error('Error while saving default list:', error);
+    }
+  }
+
+  /**
+   * Save and connect - saves config, tests connection, and fetches lists
+   */
+  async function saveAndConnect() {
     let serverUrl = elements.serverUrl.value.trim();
     const apiKey = elements.apiKey.value.trim();
     
@@ -223,42 +237,19 @@
       serverUrl = serverUrl.slice(0, -1);
     }
     
+    // Save config first
     try {
       await browser.storage.local.set({
         serverUrl,
-        apiKey,
-        lists,
-        defaultListId: elements.defaultList.value
+        apiKey
       });
-      
-      showStatus(__('configSaved'), 'success');
     } catch (error) {
       console.error('Error while saving:', error);
       showStatus(__('configSaveError'), 'error');
-    }
-  }
-
-  /**
-   * Test the connection to the server with the API
-   */
-  async function testConnection() {
-    let serverUrl = elements.serverUrl.value.trim();
-    const apiKey = elements.apiKey.value.trim();
-    
-    if (!serverUrl) {
-      showStatus(__('enterServerUrl'), 'error');
       return;
     }
     
-    if (!apiKey) {
-      showStatus(__('enterApiKey'), 'error');
-      return;
-    }
-    
-    if (serverUrl.endsWith('/')) {
-      serverUrl = serverUrl.slice(0, -1);
-    }
-    
+    // Test connection and fetch lists
     showStatus(__('testingConnection'), 'info');
     
     try {
@@ -272,7 +263,15 @@
       
       if (response.ok) {
         const data = await response.json();
-        showStatus(__('connectionSuccess', { count: data.lists?.length || 0 }), 'success');
+        lists = data.lists || [];
+        
+        // Save lists to storage
+        await browser.storage.local.set({ lists });
+        
+        renderLists();
+        updateDefaultListSelect();
+        
+        showStatus(__('connectionSuccessListsFetched', { count: lists.length }), 'success');
       } else if (response.status === 401) {
         showStatus(__('connectionErrorInvalidKey'), 'error');
       } else {
@@ -287,7 +286,7 @@
   }
 
   /**
-   * Fetch lists from the API
+   * Fetch lists from the API (used for refresh)
    */
   async function fetchLists() {
     let serverUrl = elements.serverUrl.value.trim();
