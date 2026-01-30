@@ -63,22 +63,6 @@
     "message": "Configure a conexão e clique em \"Buscar minhas listas\"",
     "description": "Estado vazio das listas"
   },
-  "defaultList": {
-    "message": "⭐ Lista padrão",
-    "description": "Título da seção lista padrão"
-  },
-  "defaultListLabel": {
-    "message": "Lista selecionada por padrão",
-    "description": "Rótulo lista padrão"
-  },
-  "defaultListHelp": {
-    "message": "Esta lista será pré-selecionada quando você adicionar itens",
-    "description": "Texto de ajuda lista padrão"
-  },
-  "selectNone": {
-    "message": "-- Nenhuma --",
-    "description": "Opção nenhuma seleção"
-  },
   "save": {
     "message": "💾 Salvar",
     "description": "Botão salvar"

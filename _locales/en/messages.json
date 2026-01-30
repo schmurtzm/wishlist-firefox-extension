@@ -63,22 +63,6 @@
     "message": "Configure connection and click \"Fetch My Lists\"",
     "description": "Empty lists state"
   },
-  "defaultList": {
-    "message": "⭐ Default List",
-    "description": "Default list section title"
-  },
-  "defaultListLabel": {
-    "message": "Default selected list",
-    "description": "Default list label"
-  },
-  "defaultListHelp": {
-    "message": "This list will be pre-selected when adding items",
-    "description": "Default list help text"
-  },
-  "selectNone": {
-    "message": "-- None --",
-    "description": "No selection option"
-  },
   "save": {
     "message": "💾 Save",
     "description": "Save button"

@@ -63,22 +63,6 @@
     "message": "Configurez la connexion et cliquez sur \"Récupérer mes listes\"",
     "description": "État vide des listes"
   },
-  "defaultList": {
-    "message": "⭐ Liste par défaut",
-    "description": "Titre de la section liste par défaut"
-  },
-  "defaultListLabel": {
-    "message": "Liste sélectionnée par défaut",
-    "description": "Label liste par défaut"
-  },
-  "defaultListHelp": {
-    "message": "Cette liste sera présélectionnée lors de l'ajout d'articles",
-    "description": "Aide liste par défaut"
-  },
-  "selectNone": {
-    "message": "-- Aucune --",
-    "description": "Option aucune sélection"
-  },
   "save": {
     "message": "💾 Enregistrer",
     "description": "Bouton enregistrer"

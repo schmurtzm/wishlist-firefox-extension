@@ -63,22 +63,6 @@
     "message": "Configura la connessione e clicca su \"Recupera le mie liste\"",
     "description": "Stato vuoto delle liste"
   },
-  "defaultList": {
-    "message": "⭐ Lista predefinita",
-    "description": "Titolo della sezione lista predefinita"
-  },
-  "defaultListLabel": {
-    "message": "Lista selezionata per impostazione predefinita",
-    "description": "Etichetta lista predefinita"
-  },
-  "defaultListHelp": {
-    "message": "Questa lista sarà preselezionata quando aggiungi articoli",
-    "description": "Testo di aiuto lista predefinita"
-  },
-  "selectNone": {
-    "message": "-- Nessuna --",
-    "description": "Opzione nessuna selezione"
-  },
   "save": {
     "message": "💾 Salva",
     "description": "Pulsante salva"

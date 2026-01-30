@@ -63,22 +63,6 @@
     "message": "Konfigurieren Sie die Verbindung und klicken Sie auf \"Meine Listen abrufen\"",
     "description": "Leerer Listenstatus"
   },
-  "defaultList": {
-    "message": "⭐ Standardliste",
-    "description": "Titel des Standardlistenabschnitts"
-  },
-  "defaultListLabel": {
-    "message": "Standardmäßig ausgewählte Liste",
-    "description": "Standardliste Label"
-  },
-  "defaultListHelp": {
-    "message": "Diese Liste wird beim Hinzufügen von Artikeln vorausgewählt",
-    "description": "Standardliste Hilfetext"
-  },
-  "selectNone": {
-    "message": "-- Keine --",
-    "description": "Keine Auswahl Option"
-  },
   "save": {
     "message": "💾 Speichern",
     "description": "Speichern Button"

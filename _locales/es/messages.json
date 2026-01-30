@@ -63,22 +63,6 @@
     "message": "Configura la conexión y haz clic en \"Obtener mis listas\"",
     "description": "Estado vacío de listas"
   },
-  "defaultList": {
-    "message": "⭐ Lista por defecto",
-    "description": "Título de la sección lista por defecto"
-  },
-  "defaultListLabel": {
-    "message": "Lista seleccionada por defecto",
-    "description": "Etiqueta lista por defecto"
-  },
-  "defaultListHelp": {
-    "message": "Esta lista se preseleccionará al añadir artículos",
-    "description": "Texto de ayuda lista por defecto"
-  },
-  "selectNone": {
-    "message": "-- Ninguna --",
-    "description": "Opción sin selección"
-  },
   "save": {
     "message": "💾 Guardar",
     "description": "Botón guardar"

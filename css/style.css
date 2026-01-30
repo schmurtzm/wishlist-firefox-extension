@@ -399,3 +399,129 @@ textarea:invalid:not(:focus):not(:placeholder-shown) {
   appearance: none;
   padding-right: 36px;
 }
+
+/* Dark theme support - Must be at the end to override all light theme styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #e0e0e0;
+    background-color: #1c1b22;
+  }
+  
+  .form-group label {
+    color: #d0d0d0;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="number"],
+  .form-group input[type="url"],
+  .form-group textarea,
+  .form-group select {
+    background-color: #2b2a33;
+    border-color: #52525e;
+    color: #e0e0e0;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: #7b82c9;
+    box-shadow: 0 0 0 3px rgba(123, 130, 201, 0.2);
+  }
+  
+  .help-text {
+    color: #adadad;
+  }
+  
+  .help-text a {
+    color: #8b94da;
+  }
+  
+  .image-gallery {
+    background: #2b2a33;
+    border-color: #52525e;
+  }
+  
+  .image-preview {
+    background: #1c1b22;
+  }
+  
+  .no-image {
+    color: #8f8f9d;
+  }
+  
+  .image-controls {
+    background: #2b2a33;
+    border-top-color: #52525e;
+  }
+  
+  .image-controls span {
+    color: #adadad;
+  }
+  
+  .btn-icon {
+    background: #2b2a33;
+    border-color: #52525e;
+    color: #e0e0e0;
+  }
+  
+  .btn-icon:hover:not(:disabled) {
+    background: #38373f;
+  }
+  
+  .btn-icon-small {
+    background: #2b2a33;
+    border-color: #52525e;
+    color: #e0e0e0;
+  }
+  
+  .btn-icon-small:hover:not(:disabled) {
+    background: #38373f;
+  }
+  
+  .btn-secondary {
+    background: #38373f;
+    color: #e0e0e0;
+  }
+  
+  .btn-secondary:hover:not(:disabled) {
+    background: #42414d;
+  }
+  
+  .loader {
+    border-color: #38373f;
+    border-top-color: #7b82c9;
+  }
+  
+  .loader-container p {
+    color: #adadad;
+  }
+  
+  .message-container.success .icon {
+    background: rgba(40, 167, 69, 0.15);
+  }
+  
+  .message-container.error .icon {
+    background: rgba(220, 53, 69, 0.15);
+  }
+  
+  .message-container.warning .icon {
+    background: rgba(255, 193, 7, 0.15);
+  }
+  
+  .message-container h2 {
+    color: #e0e0e0;
+  }
+  
+  .message-container p {
+    color: #adadad;
+  }
+  
+  h1 {
+    color: #e0e0e0;
+    border-bottom-color: #52525e;
+  }
+  
+  #list-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23adadad' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  }
+}
