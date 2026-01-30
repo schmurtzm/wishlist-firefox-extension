@@ -1,6 +1,6 @@
 # Wishlist Quick Add - Firefox Extension
 
-Firefox extension to quickly add items to your Wishlist instance from any website.
+Firefox extension to quickly add items to your [Wishlist](https://github.com/cmintey/wishlist) instance from any website.
 
 
 ## Features
